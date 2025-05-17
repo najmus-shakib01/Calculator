@@ -1,57 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Calculator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="images/calculator-icon.png"
+      type="image/png"
+    />
+  </head>
+  <body>
+    <div class="container calculator-app">
+      <div class="row justify-content-center">
+        <div class="col-md-4 col-sm-6">
+          <div class="calculator-header text-center mb-4">
+            <h1 class="display-4 fw-bold text-primary">Calculator</h1>
+            <p class="text-muted">Professional Grade Calculator</p>
+          </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="images/shakib.jpg" type="image/x-icon">
-</head>
+          <div class="calculator-card shadow-lg">
+            <div class="calculator-display">
+              <input type="text" id="result" class="form-control" readonly />
+              <div id="history" class="text-end text-muted small"></div>
+            </div>
 
-<body>
-    <br>
-    <h1 class="big">Calculator</h1>
-    <div class="card">
-        <div class="calc-head">
-            <input type="text" id="result" maxlength="20">
+            <div class="calculator-buttons">
+              <div class="row g-2 mb-2">
+                <div class="col-3">
+                  <button class="btn btn-secondary btn-operation" value="C">
+                    C
+                  </button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-secondary btn-operation" value="+/-">
+                    ±
+                  </button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-secondary btn-operation" value="%">
+                    %
+                  </button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-warning btn-operation" value="/">
+                    ÷
+                  </button>
+                </div>
+              </div>
+
+              <div class="row g-2 mb-2">
+                <div class="col-3">
+                  <button class="btn btn-dark btn-number" value="7">7</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-dark btn-number" value="8">8</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-dark btn-number" value="9">9</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-warning btn-operation" value="*">
+                    ×
+                  </button>
+                </div>
+              </div>
+
+              <div class="row g-2 mb-2">
+                <div class="col-3">
+                  <button class="btn btn-dark btn-number" value="4">4</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-dark btn-number" value="5">5</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-dark btn-number" value="6">6</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-warning btn-operation" value="-">
+                    -
+                  </button>
+                </div>
+              </div>
+
+              <div class="row g-2 mb-2">
+                <div class="col-3">
+                  <button class="btn btn-dark btn-number" value="1">1</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-dark btn-number" value="2">2</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-dark btn-number" value="3">3</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-warning btn-operation" value="+">
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <div class="row g-2">
+                <div class="col-6">
+                  <button class="btn btn-dark btn-number" value="0">0</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-dark btn-number" value=".">.</button>
+                </div>
+                <div class="col-3">
+                  <button class="btn btn-danger btn-equals" value="=">=</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="calculator-footer text-center mt-4">
+            <p class="text-muted">
+              Press DEL to backspace • Press ESC to clear
+            </p>
+          </div>
         </div>
-        <div class="calc-body">
-            <div>
-                <input type="button" class="btn" value="C">
-                <input type="button" class="btn" value="+/-">
-                <input type="button" class="btn" value="%">
-                <input type="button" class="btn btn-style" value="/">
-            </div>
-            <div>
-                <input type="button" class="btn" value="7">
-                <input type="button" class="btn" value="8">
-                <input type="button" class="btn" value="9">
-                <input type="button" class="btn btn-style" value="X">
-            </div>
-            <div>
-                <input type="button" class="btn" value="4">
-                <input type="button" class="btn" value="5">
-                <input type="button" class="btn" value="6">
-                <input type="button" class="btn btn-style" value="-">
-            </div>
-            <div>
-                <input type="button" class="btn" value="1">
-                <input type="button" class="btn" value="2">
-                <input type="button" class="btn" value="3">
-                <input type="button" class="btn btn-style" value="+">
-            </div>
-            <div>
-                <input type="button" class="btn" value="0">
-                <input type="button" class="btn" value=".">
-                <input type="button" class="btn" value="DEL">
-                <input type="button" class="btn" style="background-color: rgb(155, 16, 16);" value="=">
-            </div>
-        </div>
+      </div>
     </div>
-    <br>
-    <script src="app.js"></script>
-</body>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>

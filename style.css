@@ -1,57 +1,137 @@
-* {
-    margin: 0;
-    padding: 0;
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --dark-color: #212529;
+  --warning-color: #fd7e14;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background: whitesmoke;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-.big {
-    font-size: 80px;
-    text-align: center;
-    color: indianred;
+.calculator-app {
+  padding: 2rem 0;
 }
 
-.card {
-    margin: 0 auto;
-    text-align: center;
-    max-width: 350px;
-    margin-top: 10px;
-    box-shadow: 0 4px 8px 0 rgb(133, 126, 126);
-    transition: 0.3s;
-    font-size: 0;
+.calculator-header h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card:hover {
-    box-shadow: 0 16px 32px 0 gray;
+.calculator-card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.calc-head #result {
-    height: 100px;
-    width: 335px;
-    font-size: 32px;
-    font-weight: bold;
-    text-align: right;
-    padding: 0 5px;
-    letter-spacing: 2px;
+.calculator-display {
+  margin-bottom: 1.5rem;
+  background-color: var(--light-color);
+  border-radius: 8px;
+  padding: 0.75rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#result {
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-align: right;
+  border: none;
+  background: transparent;
+  width: 100%;
+  color: var(--dark-color);
+  padding: 0.5rem 0;
+}
+
+#history {
+  height: 1.5rem;
+  font-size: 0.9rem;
+  color: #6c757d;
 }
 
 .btn {
-    width: 87px;
-    height: 70px;
-    font-weight: bold;
-    background-color: black;
-    color: white;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px !important;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.btn-style {
-    background-color: darkcyan;
+.btn-number {
+  background-color: var(--dark-color);
+  color: white;
 }
 
-.btn:hover {
-    background-color: rebeccapurple;
-} 
+.btn-number:hover,
+.btn-number:focus {
+  background-color: #343a40;
+  color: white;
+  transform: translateY(-2px);
+}
 
+.btn-operation {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-operation:hover,
+.btn-operation:focus {
+  background-color: #5a6268;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-warning {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.btn-warning:hover,
+.btn-warning:focus {
+  background-color: #e06c1a;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+  background-color: #bb2d3b;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Animation for button press */
+.btn:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .calculator-app {
+    padding: 1rem;
+  }
+
+  #result {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 1.1rem;
+    padding: 0.6rem;
+  }
+}
